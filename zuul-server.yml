@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  
+zuul:
+  ignoredservices: "*"
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+    routes:
+      sample-service:
+        path: /sample/**
+        url: sample-service
+        stripPrefix: false
+        sensitiveHeaders:
